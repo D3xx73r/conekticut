@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Ian Rodriguez", "Carlos Ortega"]
   spec.email         = ["ian.rgz@gmail.com", "roh.race@gmail.com"]
   spec.description   = %q{Ruby wrapper for the Conekta API}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.summary       = %q{Lighting fast client for the Conekta API, more info at: https://www.conekta.io/}
   spec.homepage      = "https://github.com/ianrgz/conekticut"
   spec.license       = "MIT"
 
@@ -18,11 +18,12 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  s.add_dependency('rest-client', '~> 1.6.0')
-  s.add_dependency('multi_json', '~> 1.8.0')
+  spec.add_dependency("activesupport", ">= 3.2.0")
+  spec.add_dependency('rest-client', '~> 1.6.0')
+  spec.add_dependency('multi_json', '~> 1.8.0')
 
   spec.add_development_dependency "bundler"
   spec.add_development_dependency "rake"
   spec.add_development_dependency("rspec", "~> 2.14.1")
-  s.add_development_dependency('shoulda', '~> 3.5.0')
+  spec.add_development_dependency('shoulda', '~> 3.5.0')
 end
