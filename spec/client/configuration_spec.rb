@@ -14,6 +14,18 @@ describe Conekticut do
       Conekticut::Client::Base.test_config.should == "foo"
     end
   end
+
+  describe ".configure_resource" do
+    it "proxies to Resource configuration" do
+      Conekticut::Client::Resource.add_config_option :resource_name
+
+      Conekticut.configure_resource do |c|
+        c.resource_name = "charges"
+      end
+
+      Conekticut::Client::Resource.resource_name.should == "charges"
+    end
+  end
 end
 
 describe Conekticut::Client::Base do
@@ -48,5 +60,15 @@ describe Conekticut::Client::Base do
         end
       end
     end
+  end
+end
+
+describe Conekticut::Client::Resource do
+  before(:each) { @client_class = Class.new(Conekticut::Client::Resource) }
+
+  it "creates a class level accessor" do
+    Conekticut::Client::Resource.add_config_option :resource_name
+    Conekticut::Client::Resource.resource_name = "charges"
+    Conekticut::Client::Resource.resource_name.should == "charges"
   end
 end

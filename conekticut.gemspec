@@ -21,6 +21,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency("activesupport", ">= 3.2.0")
   spec.add_dependency('rest-client', '~> 1.6.0')
   spec.add_dependency('multi_json', '~> 1.8.0')
+  spec.add_dependency("hashie", "~> 2.0.5")
 
   spec.add_development_dependency "bundler"
   spec.add_development_dependency "rake"
