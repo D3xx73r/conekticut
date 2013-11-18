@@ -1,4 +1,5 @@
 require "conekticut/client/configuration"
+require "conekticut/client/request_handler"
 
 module Conekticut
   module Client
