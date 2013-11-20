@@ -8,8 +8,8 @@ module Conekticut
     end
   end
 
-  class CreditCard
-    def self.create(url = nil, api_key = nil, api_version = nil, payment_info = {})
+  class Payment
+    def self.create(url = nil, payment_info = {})
       Conekticut::Client::Payment.create(url, api_key, api_version, payment_info)
     end
   end
