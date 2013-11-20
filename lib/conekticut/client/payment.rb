@@ -14,7 +14,7 @@ module Conekticut
         request_options = {
           :headers => {
             :user_agent => "Conekta RubyBindings/#{Base.conekta_version}",
-            :authorization => "Basic #{::Base64.encode64("#{Base.public_key}:")}",
+            :authorization => "Basic #{::Base64.encode64("#{Base.private_key}:")}",
             :accept=>"application/vnd.conekta-v#{ Base.api_version }+json"
           }, :method => :post, :open_timeout => 30,
           :payload => payment_info, :url => RequestHandler.format_api_path(url),

@@ -10,7 +10,7 @@ module Conekticut
 
   class Payment
     def self.create(url = nil, payment_info = {})
-      Conekticut::Client::Payment.create(url, api_key, api_version, payment_info)
+      Conekticut::Client::Payment.create(url, payment_info)
     end
   end
 end
