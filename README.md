@@ -91,7 +91,7 @@ The `create` method takes a hash with one of the following structures:
 After you have your payment info you can call:
 
 ```ruby
-  Conekticut::Payment.create(payment_info_cc)
+  Conekticut::Client::Payment.create("/charges", payment_info_cc)
 ```
 
 This method will return a hash which is the representation of the JSON the API returns, use the info as you see fit.
