@@ -1,4 +1,5 @@
 # Conekticut
+[![Gem Version](https://badge.fury.io/rb/conekticut.png)](http://badge.fury.io/rb/conekticut)
 
 This gem provides a simple yet extremely flexible way to interact with the [Conekta API](https://www.conekta.io/docs/api)
 
