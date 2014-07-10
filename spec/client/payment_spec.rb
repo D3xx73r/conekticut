@@ -5,6 +5,7 @@ describe Conekticut::Client::Payment do
   before :each do
     Conekticut.configure do |c|
       c.public_key = "1tv5yJp3xnVZ7eK67m4h"
+      c.private_key = "1tv5yJp3xnVZ7eK67m4h"
       c.ssl_cert_path = "spec/factories/ssl_cert.crt"
       @payments_status_list = ["paid", "pending_payment"]
     end
@@ -14,7 +15,7 @@ describe Conekticut::Client::Payment do
     context "when incorrect data was submited" do
       it "send request to conekta servers" do
         payment_info = { "card"=> {} }
-        response = Conekticut::Client::Payment.create("/charges", payment_info)
+        response = Conekticut::Client::Payment.create("charges", payment_info)
         response["status"].should eq 422
       end
     end
@@ -43,7 +44,7 @@ describe Conekticut::Client::Payment do
             }
           }
 
-          response = Conekticut::Client::Payment.create("/charges", payment_info)
+          response = Conekticut::Client::Payment.create("charges", payment_info)
           @payments_status_list.should include(response["status"])
         end
       end
@@ -65,7 +66,7 @@ describe Conekticut::Client::Payment do
             }
           }
 
-          response = Conekticut::Client::Payment.create("/charges", payment_info)
+          response = Conekticut::Client::Payment.create("charges", payment_info)
           @payments_status_list.should include(response["status"])
         end
       end
@@ -77,7 +78,7 @@ describe Conekticut::Client::Payment do
             "amount"=>20000,
             "description"=>"Stogies",
             "reference_id"=>"9839-wolf_pack",
-            "bank"=> {
+            "cash"=> {
               "type"=>"oxxo"
             },
             "details"=> {
@@ -87,7 +88,7 @@ describe Conekticut::Client::Payment do
             }
           }
 
-          response = Conekticut::Client::Payment.create("/charges", payment_info)
+          response = Conekticut::Client::Payment.create("charges", payment_info)
           @payments_status_list.should include(response["status"])
         end
       end

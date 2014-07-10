@@ -6,9 +6,9 @@ module Conekticut
       included do
         add_config_option :public_key
         add_config_option :private_key
-        add_config_option :conekta_version, "'0.2.0'"
+        add_config_option :conekta_version, "'0.4.4'"
         add_config_option :api_base_path, "'https://api.conekta.io'"
-        add_config_option :api_version
+        add_config_option :api_version, "'0.3.0'"
         add_config_option :use_ssl
         add_config_option :ssl_cert_path
       end
